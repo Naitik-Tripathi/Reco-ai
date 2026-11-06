@@ -1,0 +1,21 @@
+import { Link } from 'react-router-dom'
+import { ArrowRight, Wind, BrainCircuit, MapPinned, ShieldCheck, Activity, Sparkles, HardHat, Leaf, Gauge, MoveUpRight } from 'lucide-react'
+import { PageHeader } from '../components'
+
+const capabilities = [
+  { icon: Activity, title: 'Environmental intelligence', text: 'Explore air-quality conditions, pollutant indicators, and local trends from connected data sources.' },
+  { icon: MapPinned, title: 'Cleaner route insights', text: 'Compare routes using available air-quality samples alongside distance and travel time.' },
+  { icon: HardHat, title: 'Connected RECO device', text: 'A digital companion for helmet telemetry, prototype status, and future IoT integration.' },
+  { icon: BrainCircuit, title: 'RECO information assistant', text: 'Ask practical questions and get prepared explanations about the platform and its environmental data.' },
+]
+
+export default function Home() {
+  return <div className="home-page">
+    <div className="hero-panel"><div className="hero-glow glow-one"/><div className="hero-glow glow-two"/><div className="hero-copy"><div className="hero-kicker"><span className="pulse-dot"/> ENVIRONMENTAL INTELLIGENCE ECOSYSTEM</div><h1>Know your air.<br/><span>Move smarter.</span></h1><p>RECO AI connects environmental data, intelligent mobility insights, and smart helmet technology in one connected experience.</p><div className="hero-actions"><Link to="/dashboard" className="button button-primary">Explore dashboard <ArrowRight size={16}/></Link><Link to="/technology" className="button button-ghost">Discover RECO <MoveUpRight size={15}/></Link></div><div className="hero-proof"><span><ShieldCheck size={15}/> Data-aware insights</span><span><Wind size={15}/> Clean-air mission</span><span><Sparkles size={15}/> Digital tools</span></div></div><div className="hero-art"><div className="orbit orbit-a"/><div className="orbit orbit-b"/><div className="hero-core"><div className="core-ring"><Wind size={58}/></div><span>RECO</span><small>SMART MOBILITY</small></div><div className="floating-chip chip-top"><span className="chip-dot cyan"/> AIR INTELLIGENCE</div><div className="floating-chip chip-bottom"><BrainCircuit size={15}/> RECO INSIGHTS</div><div className="art-lines"/></div><div className="hero-bottomline"><span>01 / CONNECTED INTELLIGENCE</span><span>BUILT FOR A MORE INFORMED COMMUTE <ArrowRight size={13}/></span></div></div>
+    <div className="home-section-head"><div><div className="eyebrow">ONE CONNECTED PLATFORM</div><h2>From air data to smarter decisions.</h2></div><p>Three connected pillars bring the RECO vision to life.</p></div>
+    <div className="pillar-grid"><div className="pillar-card"><div className="pillar-icon"><BrainCircuit/></div><div className="pillar-number">01 / INTELLIGENCE</div><h3>Environmental Insights</h3><p>Explore environmental information through clear, prepared explanations and useful context.</p></div><div className="pillar-card"><div className="pillar-icon"><Wind/></div><div className="pillar-number">02 / HARDWARE</div><h3>RECO Smart Helmet</h3><p>Build a connected companion for prototype telemetry and future device capabilities.</p></div><div className="pillar-card"><div className="pillar-icon"><Leaf/></div><div className="pillar-number">03 / IMPACT</div><h3>Environment + public reports</h3><p>Make local environmental awareness more accessible through data and community reports.</p></div></div>
+    <div className="home-section-head capabilities-head"><div><div className="eyebrow">PLATFORM CAPABILITIES</div><h2>Everything works together.</h2></div><Link to="/dashboard" className="text-link">Open workspace <ArrowRight size={15}/></Link></div>
+    <div className="capability-grid">{capabilities.map(({icon:Icon,title,text},i)=><div className="capability-card" key={title}><div className="capability-icon"><Icon size={19}/></div><div className="capability-count">0{i+1}</div><h3>{title}</h3><p>{text}</p></div>)}</div>
+    <div className="home-cta"><div><div className="eyebrow">START EXPLORING</div><h2>Make your next move<br/><span>more informed.</span></h2><p>Open the dashboard to explore available modelled air-quality data and frontend demo tools.</p></div><Link to="/dashboard" className="button button-primary">Launch RECO AI <ArrowRight size={16}/></Link><Gauge className="cta-watermark" size={180}/></div>
+  </div>
+}
